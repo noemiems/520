@@ -1,20 +1,26 @@
 import re
 IN = open("text.txt")
+OUT = open("output.txt", "w")
 line = "XXX"
-list = []
+text = []
 sentencelist = []
 exceptions = ['Mr.', 'Mrs.', 'e.g', 'i.e', '.com']
 
 while line:
     line = IN.readline()
     line.strip()
-    list.append(line)
+    text.append(line)
 
-for x in range(len(list)):
-    paragraph = list[x]
-    sentence = re.split('\.|!|\?|;|(?<!\[\s])[,](?![\s])', paragraph)
-    sentencelist.append(sentence)
+for x in range(len(text)):
+    grouptext = text[x]
+    sentences = re.split('\.|!|\?|;|(?<!\[\s])[,](?![\s])', grouptext)
+    sentencelist.append(sentences)
 
-for y in range(len(sentencelist)):
-    for z in sentencelist[y]:
-        print(z, '\n')
+for paragraph in range(len(sentencelist)):
+    for sentence in sentencelist[paragraph]:
+        OUT.write(sentence)
+        OUT.write('\n')
+        OUT.write('\n')
+
+OUT.close()
+IN.close()
