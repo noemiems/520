@@ -4,7 +4,7 @@ OUT = open("output.txt", "w")
 line = "XXX"
 text = []
 sentencelist = []
-exceptions = ['Mr.', 'Mrs.', 'e.g', 'i.e', '.com']
+exceptions = ['Mr.', 'Mrs.', 'e.g', 'i.e', '.com', 'Dr.', 'Fig.', 'Ms.']
 
 while line:
     line = IN.readline()
