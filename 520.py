@@ -13,7 +13,7 @@ while line:
 
 for x in range(len(text)):
     grouptext = text[x]
-    sentences = re.split('\.|!|\?|;|(?<!\[\s])[,](?![\s])', grouptext)
+    sentences = re.split('\.|!|\?', grouptext)
     sentencelist.append(sentences)
 
 for paragraph in range(len(sentencelist)):
