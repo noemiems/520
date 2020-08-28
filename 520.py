@@ -1,5 +1,5 @@
 import re
-IN = open("neal.txt")
+IN = open("text.txt")
 OUT = open("output.txt", "w")
 line = "XXX"
 text = []
