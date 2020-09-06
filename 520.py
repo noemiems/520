@@ -1,7 +1,7 @@
 import re
 
 #testString = "\"You are a nice - \" \"So are you!\"\nI love him. I? Love him? Truly! O! 'Tis grand!" #This is a silly test string with some weird examples.
-IN = open("Test.txt")
+IN = open("AaronHuey_2010X.txt")
 OUT = open("output.txt", "w")
 line = "XXX"
 text = []
