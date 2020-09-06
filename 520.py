@@ -1,34 +1,30 @@
 import re
 
-#testString = "\"You are a nice - \" \"So are you!\"\nI love him. I? Love him? Truly! O! 'Tis grand!" #This is a silly test string with some weird examples.
-IN = open("AaronHuey_2010X.txt")
-OUT = open("output.txt", "w")
-line = "XXX"
-text = []
-sentencelist = []
-current_sent = ""
+in_file_name = "AaronHuey_2010X.txt" # <-------------- input file name here
+file = open(in_file_name)
+myText = file.read()
+file.close()
+myText = re.sub('<[^>]*>', "\n", myText)
+out = open("sentences_in__" + in_file_name, "w") # This double underscore is to say that this is a prefix that was programatically added
 
-while line:
-    line = IN.readline()
-    line.strip()
-    text.append(str(line))
-    for x in range(len(text)):
-        for token in re.finditer('"*\'*[A-Z]*[a-z]*\!*\.*\?*\-*"*\s*\r*\n*', text[x]):
-            token = token.group(0) #this has something to do with regex groups and parenthesis;
-            current_sent = current_sent + token
-            if re.search('[.!?\-\"](\s|\n|\Z)', token):
-                sentencelist.append(current_sent)
-                current_sent = ""
+abbrev_dict = ["Mr.", "Mrs.", "Ms.", "U.S.", "U.S.A.", "U.S.S.R", "A.L."]
 
-#for x in range(len(sentencelist)):
-#    print(sentencelist[x])
-#    print('\n')
+for item in abbrev_dict:
+    clean_item = re.sub(r'\.', 'THISISADOT', item)
+    myText = re.sub(item, clean_item, myText)
 
-for x in range(len(sentencelist)):
-        OUT.write(sentencelist[x])
-        OUT.write('\n')
-        OUT.write('\n')
+split_regex = r'(\s*[.!?]"*\s*)|(\n\s*)|(\s*-"\s*)'
+split_text = re.split(split_regex, myText) # The r at the beginning is some kind of flag to say, "hey, this is a regex."
 
-#OUT.close()
-#IN.close()
+for token in split_text:
+    if token is None:
+        continue
+    is_sentence_boundary = re.search(split_regex, token) is not None
+    if not is_sentence_boundary:
+        token = re.sub(r'THISISADOT', '.', token)
+        out.write(token)
+    else:
+        token = re.sub(r'\n', ' ', token)
+        out.write(token + '\n\n')
 
+# Wish list items: deal with rules for exceptions with abbreviations. Example: U.S. Stock Exchange vs He went to the U.S. Stock Exchanges there were doing great.
