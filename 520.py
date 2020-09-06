@@ -1,13 +1,13 @@
 import re
 
-in_file_name = "AaronHuey_2010X.txt" # <-------------- input file name here
+in_file_name = "Jane_Eyre_Chapter_1.txt" # <-------------- input file name here
 file = open(in_file_name)
 myText = file.read()
 file.close()
 myText = re.sub('<[^>]*>', "\n", myText)
 out = open("sentences_in__" + in_file_name, "w") # This double underscore is to say that this is a prefix that was programatically added
 
-abbrev_dict = ["Mr.", "Mrs.", "Ms.", "U.S.", "U.S.A.", "U.S.S.R", "A.L."]
+abbrev_dict = ["Mrs.", "Ms.", "U.S.", "U.S.A.", "U.S.S.R", "A.L.", "Mr."] # need to fix Mrs.! I think we need to do something with word boundaries here.
 
 for item in abbrev_dict:
     clean_item = re.sub(r'\.', 'THISISADOT', item)
