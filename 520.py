@@ -1,6 +1,6 @@
 import re
 
-in_file_name = "Jane_Eyre_Chapter_1.txt" # <-------------- input file name here
+in_file_name = "AaronHuey_2010X.txt" # <-------------- input file name here
 file = open(in_file_name)
 myText = file.read()
 file.close()
@@ -11,7 +11,7 @@ abbrev_dict = ["Mrs.", "Ms.", "U.S.", "U.S.A.", "U.S.S.R", "A.L.", "Mr."] # need
 
 for item in abbrev_dict:
     clean_item = re.sub(r'\.', 'THISISADOT', item)
-    myText = re.sub(item, clean_item, myText)
+    myText = myText.replace(item, clean_item) 
 
 split_regex = r'(\s*[.!?]"*\s*)|(\n\s*)|(\s*-"\s*)'
 split_text = re.split(split_regex, myText) # The r at the beginning is some kind of flag to say, "hey, this is a regex."
