@@ -22,13 +22,13 @@ for x in range(len(text)):
     grouptext = re.sub(r"(?:[A-Z]\.)+", lambda m: changingdots(m.group()), grouptext)
     sentences = re.split('(?<=[A-Z]\.[A-Z]\.)(\s)', grouptext)
     for y in range(len(sentences)):
-        sentencesb = re.split('(?<!\w\.\w.)(?<![A-Z][a-z]\.\s)(?<!p\.)((?<=[.?!])|(?<=\.")|(?<=]\.))(\s+|[A-Z].*)', sentences[y])
+        sentencesb = re.split('(?<!p\.)((?<=[.?!])|(?<=\.")|(?<=]\.))(\s|[A-Z].*)', sentences[y])
         sentencelist.append(sentencesb)
 
 for x in range(len(sentencelist)):
     for y in range(len(sentencelist[x])):
         text = sentencelist[x][y]
-        final = re.split('(?<!\w\.\w.)(?<![A-Z][a-z]\.\s)(?<!p\.)((?<=[.?!])|(?<=\.")|(?<=]\.))(\s+|[A-Z].*)', text)
+        final = re.split('(?<!p\.)((?<=[.?!])|(?<=\.")|(?<=]\.))(\s|[A-Z].*)', text)
         finallist.append(final)
 
 for paragraph in range(len(finallist)):
