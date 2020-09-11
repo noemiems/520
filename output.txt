@@ -1,0 +1,90 @@
+Abstract.
+
+ 
+Given the cost of electronic health records (EHRs) to society and hospitals and the heightened concern about breaches of patient information, it is imperative to understand the risks that EHRs and the pursuit of a meaningful use (MU) initiative, apart from actual attestation of MU, may pose to the privacy of patient information.
+
+ 
+In this study, we examine how the adoption of EHRs and an MU initiative affect the occurrence of breaches of patient information.
+
+ 
+We also study whether and how EHRs and MU initiatives may increase the risk of accidental and malicious breaches of patient information.
+
+ 
+Using data from multiple sources, such as the American Hospital Association (AHA), the Healthcare Information and Management Systems Society (HIMSS) Analytics Database, and the Privacy Rights Clearinghouse (PRC), our study shows that implementing EHRs leads to a 3.081 times higher risk of a breach of patient information.
+
+ 
+This heightened risk is mostly driven by the occurrence of more accidental breaches.
+
+ 
+Although the effect of an MU initiative on the overall number of breaches is not significant, undertaking MU increases the risk of accidental breaches 1.771 times.
+
+ 
+We also found that these risks increased more among relatively larger hospitals.
+
+ 
+However, simply having more components of EHRs does not necessarily increase the risk of breaches.
+
+ 
+Overall, our findings show that breaches of patient information may be rooted in the digitized data and processes enabled by technologies such as EHRs and their usage rather than resident in the technological components themselves.
+
+ 
+We conclude that, despite recent evidence that usage of EHRS has improved the quality of healthcare, quality must go hand in hand with the protection of patient information.
+
+
+
+
+
+
+
+
+Although increased information systems (IS) development outsourcing is the trend, many of these arrangements fail to meet client expectations.
+
+ 
+We take a coordination perspective and adopt an information processing lens used by prior organization theorists to conceptualize sets of formal structural and informal nonstructural mechanisms, and predict their positive impacts on the strategic IT benefits achieved by the client.
+
+ 
+Utilizing a strategic alliance lens, we also predict that two characteristics of the client-vendor arrangement will moderate the impacts of both sets of coordination mechanisms.
+
+ 
+We test our hypotheses using hierarchical regression techniques on field survey data collected from 141 IS managers in client firms, responsible for IS development outsourcing arrangements.
+
+ 
+We found that the implementation of both structural and informal mechanisms positively impact the client’s strategic IT benefits.
+
+ 
+In arrangements with greater resource provisioning by the vendor, the positive impacts of informal governance mechanisms are strengthened.
+
+ 
+In arrangements with higher values similarity, the positive impacts of structural governance mechanisms are strengthened, but the positive impacts of informal mechanisms are weakened.
+
+ 
+A post-hoc analysis of a mediation model reveals that values similarity also has a positive relationship to both structural and informal governance mechanisms.
+
+ 
+This study therefore provides empirical support for the validity of an information processing lens to theorize lateral mechanism solutions to the coordination challenges of IS development outsourcing.
+
+ 
+Implications for research and practice are discussed, including the need for future research to better understand how client managers evolve sets of formal and informal mechanisms over the life of an outsourcing arrangement to achieve strategic objectives for their IT organization.
+
+
+
+
+
+
+ABSTRACT: This article studies the strategic network formation in a location-based social network.
+
+ 
+We build an empirical model of social link creation that incorporates individual characteristics and pairwise user similarities.
+
+ 
+Specifically, we define four user proximity measures from biography, geography, mobility, and short messages.
+
+ 
+To construct proximity from unstructured text information, we build topic models using Latent Dirichlet Allocation.
+
+ 
+Using Gowalla data with 385,306 users, 3 million locations, and 35 million check-in records, we empirically estimate the model to find evidence on the homophily effect on network formation.
+
+ 
+To cope with possible endogeneity issues, we use exogenous weather shocks as our instrumental variables and find the empirical results are robust: network formation decisions are significantly affected by our proximity measures.
+
