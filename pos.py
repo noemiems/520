@@ -5,7 +5,6 @@ text = []
 sentence = []
 wordlist = []
 taglist = []
-tagcount = []
 
 while line:
     line = IN.readline()
