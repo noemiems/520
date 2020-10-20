@@ -41,12 +41,15 @@ for lists in range(len(splitsentence)):
 
 for giventag in range(len(taglist)):
     dict = {}
+    pairlist = []
     for tag in range(1,len(tagslist)):
         if tagslist[tag] == taglist[giventag]:
             pair = tagslist[tag-1] + tagslist[tag]
+            pairlist.append(pair)
             if pair not in dict:
-                pairlist.append(pair)
                 dict[pair] = 1
             else:
                 dict[pair] += 1
-    print(dict)
+    for item in dict:
+        probpair = dict[item]/len(pairlist)
+        print('Probability of', item, 'combination based on all possible combinations:', probpair)
