@@ -8,7 +8,8 @@ firstword = []
 sentence = []
 tagslist = []
 splitsentence = []
-
+pairlist = []
+taglist = ['N', 'J', 'V', 'A', 'I', 'Z', 'C', 'D', 'W', 'H', 'B', 'T', 'R']
 while line:
     line = IN.readline()
     line.strip()
@@ -28,6 +29,7 @@ for word in firstword:
 for item in ssdict:
     probfirst = ssdict[item]/len(firstword)
     print('Probability that', item, 'starts a sentence:', probfirst)
+
 for x in range(len(sentence)):
     for item in sentence[x]:
         splititem = item.split('/')
@@ -36,11 +38,15 @@ for lists in range(len(splitsentence)):
     if len(splitsentence[lists]) == 2:
         tagslist.append(splitsentence[lists][1])
 
-for tag in range(1,len(tagslist)):
-    pair = tagslist[tag-1] + tagslist[tag]
-    if pair not in dict:
-        dict[pair] = 1
-    else:
-        dict[pair] += 1
 
-print(dict)
+for giventag in range(len(taglist)):
+    dict = {}
+    for tag in range(1,len(tagslist)):
+        if tagslist[tag] == taglist[giventag]:
+            pair = tagslist[tag-1] + tagslist[tag]
+            if pair not in dict:
+                pairlist.append(pair)
+                dict[pair] = 1
+            else:
+                dict[pair] += 1
+    print(dict)
