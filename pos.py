@@ -10,6 +10,8 @@ tagslist = []
 splitsentence = []
 pairlist = []
 taglist = ['N', 'J', 'V', 'A', 'I', 'Z', 'C', 'D', 'W', 'H', 'B', 'T', 'R']
+highestprob = []
+
 while line:
     line = IN.readline()
     line.strip()
@@ -52,4 +54,5 @@ for giventag in range(len(taglist)):
                 dict[pair] += 1
     for item in dict:
         probpair = dict[item]/len(pairlist)
-        print('Probability of', item, 'combination based on all possible combinations:', probpair)
+        print('Probability of', item[1], 'to appear after', item[0], ':', probpair)
+
